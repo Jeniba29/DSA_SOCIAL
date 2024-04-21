@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="../static/style.css">
    
     <body>
-    {%if target == 0%}
-        <h1>Purchased</h1>
+    {%if target == 0 %}
+        <h1> Not Purchased</h1>
+        <body background="../static/download.jpeg">
 
 
 
     {%else%}
-        <h1>Not Purchased</h1>
+        <h1>Purchased</h1>
+        <body background="../static/download4.jpg">
+
     {%endif%}
 
     <br>

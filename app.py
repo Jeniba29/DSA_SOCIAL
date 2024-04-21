@@ -7,21 +7,18 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 
-@app.route('/prediction', methods=['GET','POST'])
+@app.route('/prediction',methods=['GET','POST'])
 def predict():
     if request.method == 'POST':
         gender = request.form['gender']
         age = request.form['age']
-        estimatedsalary = request.form['estimatedsalary']
-
+        estimatedsalary =request.form['estimatedsalary']
         model = pickle.load(open('model.pkl','rb'))
-        prediction= model11.predict([[gender,age,estimatedsalary]])
-        target=prediction[0]
-        print(target)
+        prediction= model.predict([[int(gender,age,estimatedsalary)]])
+        print(prediction[0])
         
-    return render_template('prediction.html',target=target)
-
-
+    return render_template('prediction.html',target=prediction[0])
+    
 if __name__ =='__main__':
 
    app.run()
