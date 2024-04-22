@@ -17,8 +17,8 @@ def predict():
         prediction= model.predict([[int(gender,age,estimatedsalary)]])
         print(prediction[0])
         
-    return render_template('prediction.html',target=prediction[0])
+        return render_template('prediction.html',target=prediction[0])
     
 if __name__ =='__main__':
 
-   app.run()
+   app.run(port=5001,debug=True)

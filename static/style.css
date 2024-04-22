@@ -54,7 +54,7 @@ select {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #328c42;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -62,7 +62,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #3e8de2;
 }
 a{
     text-align: bottom;
