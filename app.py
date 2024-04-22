@@ -13,6 +13,12 @@ def predict():
         gender = request.form['gender']
         age = request.form['age']
         estimatedsalary =request.form['estimatedsalary']
+        
+        from sklearn.preprocessing import StandardScaler
+        scaler=StandardScaler()
+        X_train_scale=scaler.fit_transform(X_train)
+        X_test_scale=scaler.fit_transform(X_test)
+
         model = pickle.load(open('model.pkl','rb'))
         prediction= model.predict([[int(gender,age,estimatedsalary)]])
         print(prediction[0])
